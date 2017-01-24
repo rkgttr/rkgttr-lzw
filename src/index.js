@@ -6,12 +6,10 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE.txt file in the root directory of this source tree.
  */
-
-class _LZW {
+export default class LZW {
   constructor() {
-    return this;
   }
-  encode(s) {
+  static encode(s) {
     let dict = {},
       data = (s + '').split(''),
       out = [],
@@ -36,7 +34,7 @@ class _LZW {
     }
     return out.join('');
   }
-  decode(s) {
+  static decode(s) {
     let dict = {},
       data = (s + '').split(''),
       currChar = data[0],
@@ -60,5 +58,3 @@ class _LZW {
     return out.join('');
   }
 }
-const LZW = new _LZW();
-export default LZW;
