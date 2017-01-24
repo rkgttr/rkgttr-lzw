@@ -36,9 +36,6 @@
     "chai": "^4.0.0-canary.1",
     "coveralls": "^2.11.14",
     "del": "^2.2.2",
-    "eslint": "^3.8.0",
-    "eslint-config-airbnb-base": "^10.0.1",
-    "eslint-plugin-import": "^2.2.0",
     "istanbul": "^1.1.0-alpha.1",
     "mocha": "^3.1.2",
     "rollup": "^0.36.3",
@@ -48,6 +45,7 @@
   "scripts": {
     "test": "mocha --compilers js:babel-register",
     "test:watch": "mocha --compilers js:babel-register --reporter min --watch",
+    "test:cover": "babel-node ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha",
     "build": "node tools/build",
     "prepublish": "npm run build"
   }
