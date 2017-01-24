@@ -5,7 +5,7 @@
 [![Build Status](http://img.shields.io/travis/rkgttr/rkgttr-lzw/master.svg?style=flat-square)](https://travis-ci.org/rkgttr/rkgttr-lzw)
 [![Dependency Status](http://img.shields.io/david/rkgttr/rkgttr-lzw.svg?style=flat-square)](https://david-dm.org/rkgttr/rkgttr-lzw)
 
-> Small and fast pseudo random number generator. Not the most complex or bullet-proof of PRNGs out there, but fast and small when you want to have "predictable" random numbers. I don't know the period of this generator: I've run a script that generates a million numbers per second and after a day and a half (188 billions iterations) the sequence still did not repeat.  So I guess it's good enough.
+> JavaScript implementation of the LZW algorithm for encoding and decoding strings. Pretty useless in browser if you use GZIP compression, but could be cool to obsfuscate data.
 
 ### How to Install
 
@@ -21,24 +21,20 @@ $ yarn add rkgttr-lzw --dev
 ### Getting Started
 
 ```js
-var Prng = require('rkgttr-lzw');
+var LZW = require('rkgttr-lzw');
 
-var prng = new Prng();
-prng.gen();
+var encoded = LZW.encode('lorem ipsum dolor sit amet');
+var decoded = LZW.decode(encoded);
 ```
 or
 
 ```js
-import Prng from 'rkgttr-lzw';
+import LZW from 'rkgttr-lzw';
 
-let prng = new Prng();
-prng.gen();
+let encoded = LZW.encode('lorem ipsum dolor sit amet');
+let decoded = LZW.decode(encoded);
 ```
-When creating a PRNG instance, you can pass a seed to it:
 
-```js
-let prng = new Prng(12);
-```
 
 ### License
 
